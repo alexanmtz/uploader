@@ -20,6 +20,7 @@ $.widget( "ui.uploader", {
     var el = this.element;
     var op = this.options;
     $(el).css('opacity', 0);
+    
 		if(window.FileReader) {
 			$(op.button).bind('click.uploader', function(e){
 				$(el).bind("change", function(evt){
