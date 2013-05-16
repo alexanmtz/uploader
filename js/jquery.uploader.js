@@ -12,6 +12,7 @@ $.widget( "ui.uploader", {
   options: {
     button: '.add',
     preview: '.preview',
+	width: 250,
     dragOverClass: '.dragover',
     fileAdded: function(){}
   },
@@ -91,7 +92,7 @@ $.widget( "ui.uploader", {
   	var files = evt.target.files;
 		var img = document.createElement("img");
 		var element = $(self.element).get(0);
-		img.width = '137';
+		img.width = opts.width;
     img.classList.add("obj");
     var reader = new FileReader();
  		// Closure to capture the file information.
