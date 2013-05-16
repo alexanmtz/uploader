@@ -33,7 +33,7 @@ $.widget( "ui.uploader", {
 			$(op.button).hide();
 			$(el).css('opacity', 1);
 		}
-		this.dropbox();
+		//this.dropbox();
   },
   dropbox: function() {
   	var self = this;
@@ -99,7 +99,10 @@ $.widget( "ui.uploader", {
 	      var result = theFile.target.result;
 	      img.src = result;
 	      $(opts.preview).hide().html(img).fadeIn('slow');
-	      opts.onFileAdded.call(this, opts);
+	      if(opts.onFileAdded) {
+			opts.onFileAdded.call(this, opts);
+		}
+			
 	      //self.sendData(files[0]);
   	};
     reader.readAsDataURL(files[0]);
