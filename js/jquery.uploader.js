@@ -101,7 +101,7 @@ $.widget( "ui.uploader", {
 	      img.src = result;
 	      $(opts.preview).hide().html(img).fadeIn('slow');
 	      if(opts.onFileAdded) {
-			opts.onFileAdded.call(this, files, opts);
+			opts.onFileAdded.call(this, files, result, opts);
 		}
 			
 	      //self.sendData(files[0]);
